@@ -5,6 +5,15 @@ import Aside from "./pages/Aside.vue";
 
 <template>
   <Header />
-  <Main />
-  <Aside/>
+  <div id="flex-container">
+    <Main />
+    <Aside />
+  </div>
 </template>
+
+<style scoped>
+#flex-container {
+  display: flex;
+  flex-direction: row;
+}
+</style>

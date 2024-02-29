@@ -1,0 +1,31 @@
+.animation,
+#main {
+  transition: all 0.5s ease-in-out;
+}
+.animation .hide,
+#con {
+  transform: scale(0);
+}
+#demo1,
+#wrap {
+  width: 200px;
+}
+#demo1:after,
+#wrap:after {
+  content: "less is good";
+}
+#wrap {
+  color: #000;
+}
+.method {
+  width: 200px;
+}
+.method:after {
+  content: "less is good";
+}
+#demo2 {
+  width: 200px;
+}
+#demo2:after {
+  content: "less is good";
+}

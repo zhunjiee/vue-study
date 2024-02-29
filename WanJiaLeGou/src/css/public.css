@@ -1,0 +1,43 @@
+.btnCom {
+  color: #FFFFFF;
+  width: 100%;
+  padding: 11px 0;
+  font-size: 16px;
+  text-align: center;
+  border-style: none;
+  border-radius: 22px;
+  background-color: #EECE51;
+}
+.btnCom:active {
+  opacity: 0.9;
+}
+.comBg {
+  padding: 0 16px;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-around {
+  justify-content: space-around;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.align-end {
+  align-items: flex-end;
+}

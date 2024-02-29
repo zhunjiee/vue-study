@@ -7,6 +7,7 @@ import ClassBind from "./components/ClassBind.vue";
 import StyleBind from "./components/StyleBind.vue";
 import FormDemo from "./components/FormDemo.vue";
 import RefDemo from "./components/RefDemo.vue";
+import PropsParentDemo from "./components/PropsParentDemo.vue";
 </script>
 
 <template>
@@ -16,6 +17,7 @@ import RefDemo from "./components/RefDemo.vue";
   <EventDemo />
   <ClassBind />
   <StyleBind />
-  <FormDemo /> -->
-  <RefDemo />
+  <FormDemo />
+  <RefDemo /> -->
+  <PropsParentDemo />
 </template>

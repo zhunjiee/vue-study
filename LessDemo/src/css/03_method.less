@@ -1,0 +1,134 @@
+// 无参数方法
+.card() {
+  background-color: yellow;
+  box-shadow: 0 1px 2px rgba(50, 153, 251, 0.58);
+}
+
+// 默认参数方法
+.border(@Width: 1px, @border-style:solid, @color:red) {
+  color: @color;
+  // @arguments 指代传进来的全部参数
+  border: @arguments;
+}
+
+#wrap {
+  height: 200px;
+  .card();
+  .border(2px, dotted, #999999);
+}
+
+// 方法的命名空间
+/*
+要点:
+    1. 在css中 > 选择器,选择的是子元素
+    2. 在引入命名空间时,使用 > 选择器,父元素不能加括号
+    3. 不得单独使用命名空间的方法, 必须先引入命名空间,才能使用其中的方法
+    4. 子方法 可以使用上一层传进来的方法
+*/
+#card() {
+  background: green;
+  .d(@w: 300px) {
+    width: @w;
+    #a(@h: 200px) {
+      height: @h;
+    }
+  }
+}
+
+#demo {
+  // 父级方法不加括号
+  #card > .d > #a(100px);
+}
+
+#main {
+  #card .d();
+}
+
+#con {
+  #card();
+  .d();
+}
+
+// 方法的条件筛选
+#card {
+  // when
+  .border(@width, @color, @style) when(@width>100px) and(@color>=#999) {
+    border: @width @style @color;
+  }
+  // when no
+  .background(@color) when not(@color >= #222) {
+    background: @color;
+  }
+
+  // 逗号分隔法
+  .font(@size: 20px) when(@size>50px),(@size<100px) {
+    font-size: @size;
+  }
+}
+
+#demo2 {
+  #card > .border(200px, solid, red);
+  #card > .background(blue);
+  #card > .font(56px);
+}
+
+// 数量不定的参数
+.boxShaow(...) {
+  box-shadow: @arguments;
+}
+.textShdow(@a, ...) {
+  text-shadow: @arguments;
+}
+
+#demo3 {
+  .boxShaow(1px 2px 5px red);
+  .textShdow(2px, 1px, 3px, blue);
+}
+
+// 方法使用important!
+.border2() {
+  border: 2px dashed pink;
+  margin: 50px;
+}
+
+#demo4 {
+  .border2() !important;
+}
+
+// 循环方法
+.generate-colums(@n, @i:1) when(@i<=@n) {
+  .column-@{i} {
+    width: (@i*100% / @n);
+  }
+  .generate-colums(@n, @i + 1);
+}
+.generate-colums(4);
+
+// 属性拼接方法
+// +_ 代表 空格
+// + 代表 逗号
+.boxShadow2() {
+  box-shadow+: inset 1px 1px 2px green;
+}
+
+.Animation() {
+  transform+_: scale(2);
+}
+
+#demo5 {
+  .boxShadow2();
+  box-shadow+: 0 0 5px yellowgreen;
+
+  .Animation();
+  transform+_: rotate(15deg);
+}
+
+// 实战技巧
+.average(@x, @y) {
+  @average: ((@x + @y) /2);
+}
+
+#demo6 {
+  .average(16px, 50px);
+  padding: @average;
+}

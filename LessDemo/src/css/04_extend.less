@@ -1,0 +1,40 @@
+// extend关键字
+.animation {
+  transition: all 0.5s ease-in-out;
+  .hide {
+    transform: scale(0);
+  }
+}
+
+#main {
+  &:extend(.animation);
+}
+
+#con {
+  &:extend(.animation .hide);
+}
+
+// all全局搜索替换
+#demo1 {
+  width: 200px;
+}
+#demo1 {
+  &:after {
+    content: "less is good";
+  }
+}
+#wrap:extend(#demo1 all) {
+  color: #000;
+}
+
+// 减少代码重复性
+.method {
+    width: 200px;
+    &:after {
+        content: "less is good";
+    }
+}
+
+#demo2 {
+    .method
+}

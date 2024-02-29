@@ -1,0 +1,55 @@
+#wrap {
+  height: 200px;
+  background-color: yellow;
+  box-shadow: 0 1px 2px rgba(50, 153, 251, 0.58);
+  color: #999999;
+  border: 2px dotted #999999;
+}
+/*
+要点:
+    1. 在css中 > 选择器,选择的是子元素
+    2. 在引入命名空间时,使用 > 选择器,父元素不能加括号
+    3. 不得单独使用命名空间的方法, 必须先引入命名空间,才能使用其中的方法
+    4. 子方法 可以使用上一层传进来的方法
+*/
+#demo {
+  height: 100px;
+}
+#main {
+  width: 300px;
+}
+#con {
+  background: green;
+  width: 300px;
+}
+#demo2 {
+  background: blue;
+  font-size: 56px;
+}
+#demo3 {
+  box-shadow: 1px 2px 5px red;
+  text-shadow: 2px 1px 3px blue;
+}
+#demo4 {
+  border: 2px dashed pink !important;
+  margin: 50px !important;
+}
+.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}
+#demo5 {
+  box-shadow: inset 1px 1px 2px green, 0 0 5px yellowgreen;
+  transform: scale(2) rotate(15deg);
+}
+#demo6 {
+  padding: 33px;
+}

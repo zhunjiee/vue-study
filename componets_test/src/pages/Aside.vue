@@ -25,7 +25,7 @@
   
   <style scoped>
   .main {
-    float: left;
+    /* float: right; */
     width: 30%;
     height: 400px;
     border: 5px solid #999;

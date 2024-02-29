@@ -12,7 +12,7 @@ import Article from "../components/Article.vue";
 
 <style scoped>
 .main {
-  float: left;
+  /* float: left; */
   width: 70%;
   height: 400px;
   border: 5px solid #999;
